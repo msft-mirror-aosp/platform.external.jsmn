@@ -19,5 +19,5 @@ cc_library_static {
     vendor_available: true,
     srcs: ["jsmn.c"],
     cflags: ["-Wall", "-Werror"],
-    export_include_dirs: ["."],
+    export_include_dirs: ["include"],
 }
