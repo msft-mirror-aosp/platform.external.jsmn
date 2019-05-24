@@ -1,0 +1,22 @@
+Index: jsmn/jsmn.h
+===================================================================
+--- jsmn.orig/jsmn.h
++++ jsmn/jsmn.h
+@@ -99,7 +99,7 @@ JSMN_API void jsmn_init(jsmn_parser *par
+ JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
+                         jsmntok_t *tokens, const unsigned int num_tokens);
+ 
+-#ifndef JSMN_HEADER
++#ifndef JSMN_IMPL
+ /**
+  * Allocates a fresh unused token from the token pool.
+  */
+@@ -459,7 +459,7 @@ JSMN_API void jsmn_init(jsmn_parser *par
+   parser->toksuper = -1;
+ }
+ 
+-#endif /* JSMN_HEADER */
++#endif /* JSMN_IMPL */
+ 
+ #ifdef __cplusplus
+ }
