@@ -21,6 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+// ANDROID CHANGE: Default to header only.
+#ifndef JSMN_IMPL
+#define JSMN_HEADER
+#endif
+// END ANDROID CHANGE
+
 #ifndef JSMN_H
 #define JSMN_H
 
@@ -99,7 +105,7 @@ JSMN_API void jsmn_init(jsmn_parser *parser);
 JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
                         jsmntok_t *tokens, const unsigned int num_tokens);
 
-#ifdef JSMN_IMPL
+#ifndef JSMN_HEADER
 /**
  * Allocates a fresh unused token from the token pool.
  */
@@ -459,7 +465,7 @@ JSMN_API void jsmn_init(jsmn_parser *parser) {
   parser->toksuper = -1;
 }
 
-#endif /* JSMN_IMPL */
+#endif /* JSMN_HEADER */
 
 #ifdef __cplusplus
 }
