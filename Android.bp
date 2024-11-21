@@ -48,7 +48,10 @@ cc_library_static {
     name: "libjsmn",
     vendor_available: true,
     srcs: ["jsmn.c"],
-    cflags: ["-Wall", "-Werror"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
     export_include_dirs: ["."],
     min_sdk_version: "apex_inherit",
     apex_available: [
